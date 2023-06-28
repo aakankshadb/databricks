@@ -38,3 +38,21 @@ DeltaTable.create(spark)\
 
 # COMMAND ----------
 
+# DBTITLE 1,Method 3 : Creating table using dataframes.
+emp_data= [(100,"Stephen","M",2000,"IT"),
+           (200,"Phillip","M",2000,"HR"),
+           (300,"Lara","F",6000,"SALES")]
+emp_schema = ["emp_id","emp_name","gender","salary","department"]
+emp_df =spark.createDataFrame(data=emp_data,schema=emp_schema)
+display(emp_df)   
+
+emp_df.write.format("delta").saveAsTable("employee_details1")
+
+
+# COMMAND ----------
+
+# MAGIC %sql 
+# MAGIC select * from employee_details1
+
+# COMMAND ----------
+
