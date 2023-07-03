@@ -39,3 +39,23 @@ dbutils.fs.cp("/FileStore/aakanksha/temp1/Empdata.csv","/FileStore/aakanksha/tem
 
 # COMMAND ----------
 
+dbutils.fs.head("/FileStore/aakanksha/temp1/test.txt",7)
+
+# COMMAND ----------
+
+dbutils.fs.mkdirs("FileStore/aakanksha/data/")
+
+# COMMAND ----------
+
+dbutils.fs.rm("FileStore/aakanksha/data/")
+
+# COMMAND ----------
+
+dbutils.fs.ls("FileStore/")
+
+# COMMAND ----------
+
+dbutils.fs.mv("/FileStore/aakanksha/temp1/Empdata.csv","/FileStore/aakanksha/temp2/Empdata.csv")
+
+# COMMAND ----------
+
